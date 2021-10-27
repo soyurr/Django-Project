@@ -1,0 +1,108 @@
+{% extends 'base.html' %}  <!-- 상속 받음 -->
+{% load static %} <!-- 자원, 세팅즈파일의 static -->
+{% block title %}HOME{% endblock %}
+
+{% block extra-style %}
+<style type="text/css">
+.home-image {
+    background-image: url("{% static 'img/voice3.jpg' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 450px;
+    padding: 20px 0 0 20px;
+}
+.container-fluid {
+	padding-right: 15px;
+	padding-left: 15px; 
+	margin-right: auto; 
+	margin-left: auto; 
+}
+.h3 {
+	text-align: center;
+	color : gray;
+	text-decoration: underline;	   
+	font-family: "Last Ninja", Impact, fantasy;
+}
+.row{
+	padding-bottom: 15px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="home-image"></div>
+
+    <hr style="margin: 10px 0;">
+
+<div class="container-fluid text-center" >
+    <p class="h3">OST</p>
+    <div class="row">
+      	<div class="col-sm-4">
+			<img src="../static/img/ost1.jpg">
+        </div>
+      	<div class="col-sm-4">
+			<img src="../static/img/ost2.jpg">
+        </div>
+      	<div class="col-sm-4">
+			<img src="../static/img/ost3.jpg">
+		</div>
+    </div>
+    
+    <div class="row text-align">
+        <div class="col-sm-4">
+            <p>드라마 12회의 엔딩을 장식한 ‘내 귀는 열려’는 강렬한 기타 리프가 인상적인 곡으로, 드라마 속 긴박하고 긴장되는 순간들을 표현한 가사가 창모만의 독보적인 래핑과 보컬에 잘 녹아들어 장르물 드라마만의 긴장감 넘치는 전개를 더욱 돋보이게 만든다.</p>
+        </div>
+        <div class="col-sm-4">
+            <p>‘목소리'는 일렉트릭기타의 원초적인 질감과 신디사이저와 일렉트릭루프를 활용해 몽환적 느낌을 극대화한 곡으로, 오케스트라를 녹음하는 넓은 공간에서 녹음을 진행해 기타가 가진 본래의 질감과 자연스런 공간감이 잘 표현되어 더욱 매력적인 곡이다.</p>
+        </div>
+        <div class="col-sm-4">
+            <p>[보이스2 (OCN 토일드라마) OST - Part 4] <br>- Let Me Hear Your Voice 래퍼 면도 X 최서현의 완벽한 콜라보, 중독성 강한 훅!<br> - R&B 아티스트 디미너의 매력적인 미성</p>
+        </div>
+	</div>
+</div>	
+
+<div class="container-fluid" >   
+	<p class="h3">TEASER</p>
+    <video autoplay loop muted="background" width="100%">
+        <source src="../static/video/voice2.mp4"></source>
+    </video> 
+</div>
+<br>
+
+<div class="container-fluid text-center" >
+    <p class="h3">APPS</p>
+    <div class="row text-align">
+        <div class="col-sm-3">
+            <h5>Bookmark</h5>
+            <p>Bookmark is linked to the official homepage of the drama 'VOICE' season.</p>
+        </div>
+        <div class="col-sm-3">
+            <h5>Blog</h5>
+            <p>This application introduces characters. Users can leave comments on blogs.</p>
+        </div>
+        <div class="col-sm-3">
+            <h5>Photo</h5>
+            <p>The photo application includes still cuts of the drama 'VOICE' and pictures of actors by album.</p>
+        </div>
+        <div class="col-sm-3">
+            <h5>Polls</h5>
+            <p>This application allows you to register votes such as popularity votes. Please vote for your favorite actor or actor who you think was good at acting!</p>
+        </div>
+        <div class="col-sm-3">
+            <h5>ChatBot</h5>
+            <p>This application allows you to register votes such as popularity votes.</p>
+        </div>
+    </div>   
+</div>
+{% endblock content %}
+
+
+
+
+{% block footer %}
+<!--<footer class="fixed-bottom bg-info">-->
+<footer class="fixed-bottom bg-dark">
+    <div class="text-white font-italic text-right mr-5">Copyright &copy; 2021 SOYUL</div>
+</footer>
+{% endblock %}

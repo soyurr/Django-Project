@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}chatbot.html{% endblock %} 
+
+
+{% block content %}
+<iframe
+    allow="microphone;"
+    width="500"
+    height="850"
+
+   	src="https://console.dialogflow.com/api-client/demo/embedded/160516e8-5471-4c1e-b951-b900b3ba231d">
+</iframe>
+{% endblock content %} 
+
+{% block footer %}
+<footer class="fixed-bottom bg-dark">
+	<div class="text-white font-italic text-right mr-5">Copyright
+		&copy; 이소율</div>
+</footer>
+{% endblock %}
+

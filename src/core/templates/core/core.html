@@ -1,0 +1,92 @@
+{% extends 'base.html' %}  <!-- 상속 받음 -->
+{% load static %} <!-- 자원, 세팅즈파일의 static -->
+{% block title %}Find The Drama{% endblock %}
+
+{% block extra-style %}
+<style type="text/css">
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+#main {
+    text-align: left;
+    padding-top: 10px;
+}
+h1 {
+    margin-bottom: 20px;
+}
+input[type='text'] {
+    width: 30%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid black;
+}
+input[type='submit'] {
+    width: 30%;
+    padding: 5px;
+    border : none;
+    background: black;
+    color: white;
+    text-transform: uppercase;
+}
+form {
+    margin-bottom: 20px;
+}
+h5 {
+	text-align: left;
+}
+.res3{
+	width:100px;
+	height:auto;
+}
+.row{
+	width:50%;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="main">
+    <h1>Find the Drama</h1>
+    <form method="GET">
+        <div>
+            <label for="drama"></label>
+            <input type="text" id="drama" value="{{request.GET.drama}}" placeholder="Drama" name="drama"/>
+        </div>
+        <input type="submit" value="검색"/>
+    </form>
+    {% if result %}
+        <h5>드라마▶{{ result.name }}</h5>
+        <h5>줄거리▶ {{ result.story }}</h5>
+        {% if result.ratio != None %}
+        	<h5>시청률▶ {{ result.ratio }}</h5>
+        {% else %}
+        	<h5>시청률▶ 정보가 없습니다.</h5> 
+        {% endif %}
+        
+        {% if result.image != None %}
+			<hr>
+	        <img src ="{{ result.image }}"/>
+        {% else %}
+        {% endif %}
+        
+        {% if result.res3 != None %}
+			<hr>
+	        <h5>함께 볼 만한 드라마</h5>
+	        <div class="row">
+		        {% autoescape off %}
+		        	<div class="col-md-4">{{ result.res3 }}</div>
+				{% endautoescape %}
+			</div>
+		{% else %}
+		{% endif %}
+		
+    {% endif %}
+</div>
+{% endblock content %}
+
+{% block footer %}
+<footer class="fixed-bottom bg-dark">
+    <div class="text-white font-italic text-right mr-5">Copyright &copy; 2021 LEESOYUL</div>
+</footer>
+{% endblock %}
